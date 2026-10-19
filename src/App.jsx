@@ -1,122 +1,111 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="site">
+      <header className="navbar">
+        <a href="#home" className="logo">
+          KHISHA'S LAB <span>☕</span>
+        </a>
 
-      <div className="ticks"></div>
+        <nav className="nav-links">
+          <a className="active" href="#home">
+            Home
+          </a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <a href="#contact" className="connect-btn">
+          Let's Connect <span>→</span>
+        </a>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <main>
+        <section className="hero" id="home">
+          <div className="hero-copy">
+            <p className="hero-label">
+              SOFTWARE DEVELOPER <span>•</span> NAIROBI, KE
+            </p>
+
+            <h1>
+              Hi, I'm
+              <br />
+              <span>Khisha</span>
+              <span className="heart">♡</span>
+            </h1>
+
+            <p className="handwritten">where ideas get brewed &amp; built.</p>
+
+            <div className="scribble" />
+
+            <p className="hero-description">
+              I build thoughtful digital experiences with code, creativity and
+              curiosity — usually with a cup of coffee nearby.
+            </p>
+
+            <a href="#projects" className="explore-btn">
+              Explore My Work <span>→</span>
+            </a>
+
+            <div className="social-links">
+              <a
+                href="https://github.com/khishaplays"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                GH
+              </a>
+
+              <a href="#contact" aria-label="LinkedIn">
+                in
+              </a>
+            </div>
+
+            <div className="availability">
+              <span className="availability-dot" />
+              <div>
+                <small>CURRENTLY</small>
+                <p>Open to opportunities</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <img
+              src="/hero-latte.jpg"
+              alt="Warm developer workspace with laptop and coffee"
+            />
+
+            <div className="paper-note note-one">
+              Currently
+              <br />
+              building something
+              <br />
+              better ♡
+            </div>
+
+            <div className="paper-note note-two">
+              Good ideas.
+              <br />
+              Good code.
+              <br />
+              Great things. ♡
+            </div>
+
+            <div className="scroll-note">
+              <span>SCROLL</span>
+              <span>↓</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
