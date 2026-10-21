@@ -1,0 +1,30 @@
+.journal-page {
+  min-height: 80vh;
+  padding: 100px 8%;
+  background: var(--cream-light);
+  color: var(--espresso);
+}
+
+.journal-eyebrow {
+  color: var(--caramel);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.journal-page h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  margin: 24px 0;
+}
+
+.journal-page h1 em {
+  color: var(--caramel);
+}
+
+.journal-page > p:last-child {
+  max-width: 600px;
+  line-height: 1.8;
+  color: var(--muted);
+}

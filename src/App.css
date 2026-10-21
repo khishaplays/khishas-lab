@@ -366,3 +366,136 @@
     padding: 14px 16px;
   }
 }
+
+/* Shared page layout */
+.page-placeholder {
+  min-height: calc(100vh - 100px);
+  padding: 110px 8%;
+  background: var(--cream-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-placeholder h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  margin: 20px 0;
+  color: var(--espresso);
+}
+
+.page-placeholder > p:last-child {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--espresso);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    z-index: 30;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px 6%;
+    background: var(--cream-light);
+    box-shadow: 0 15px 25px rgba(44, 25, 19, 0.12);
+    z-index: 25;
+  }
+
+  .nav-links.nav-open a {
+    padding: 13px 0;
+  }
+}
+
+/* Additional portfolio pages */
+
+.page-placeholder {
+  min-height: calc(100vh - 100px);
+  padding: 100px 8%;
+  background: var(--cream-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-placeholder h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  color: var(--espresso);
+  margin-bottom: 20px;
+}
+
+.page-placeholder p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--espresso);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    position: relative;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 18px 6%;
+    background: var(--cream-light);
+    z-index: 20;
+    box-shadow: 0 12px 24px rgba(44, 25, 19, 0.12);
+  }
+
+  .nav-links.nav-open a {
+    padding: 12px 0;
+  }
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

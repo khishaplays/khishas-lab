@@ -1,0 +1,248 @@
+
+.workbench {
+  min-height: 100vh;
+  padding: 85px 7% 110px;
+  background: var(--cream-light);
+  color: var(--espresso);
+}
+
+.workbench-intro {
+  max-width: 780px;
+  margin-bottom: 55px;
+}
+
+.workbench-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--caramel);
+}
+
+.workbench-intro h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  margin: 15px 0;
+}
+
+.workbench-intro h1 em {
+  color: var(--caramel);
+  font-weight: 500;
+}
+
+.workbench-intro > p:last-child {
+  max-width: 570px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.workbench-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(44, 25, 19, 0.2);
+  margin-bottom: 35px;
+}
+
+.workbench-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.workbench-filters button {
+  border: 1px solid rgba(44, 25, 19, 0.2);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--espresso);
+  padding: 10px 19px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.workbench-filters button:hover,
+.workbench-filters button.selected {
+  background: var(--espresso);
+  color: var(--cream-light);
+}
+
+.workbench-count {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+.workbench-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.workbench-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--paper);
+  border: 1px solid rgba(44, 25, 19, 0.12);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.workbench-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(44, 25, 19, 0.1);
+}
+
+.workbench-card-art {
+  min-height: 245px;
+  padding: 25px;
+  background: #dcc4ab;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workbench-card:nth-child(2n) .workbench-card-art {
+  background: #d6c0b5;
+}
+
+.workbench-card-art > span,
+.workbench-art-title small {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+}
+
+.workbench-art-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.workbench-card-art > svg {
+  align-self: flex-end;
+}
+
+.workbench-card-content {
+  padding: 28px;
+}
+
+.workbench-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.72rem;
+  color: var(--mocha);
+}
+
+.workbench-card-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 18px 0 12px;
+}
+
+.workbench-card-content > p {
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.workbench-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.workbench-tags span {
+  background: rgba(173, 118, 87, 0.13);
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+}
+
+.workbench-open {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid rgba(44, 25, 19, 0.15);
+  padding: 18px 0 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+.workbench-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  padding: 20px;
+  background: rgba(30, 18, 14, 0.65);
+  display: grid;
+  place-items: center;
+}
+
+.workbench-dialog {
+  position: relative;
+  width: min(100%, 650px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(28px, 5vw, 50px);
+  background: var(--cream-light);
+  border-radius: 15px;
+}
+
+.workbench-dialog h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 15px 0;
+}
+
+.workbench-dialog h3 {
+  font-family: "Playfair Display", serif;
+  margin: 25px 0 10px;
+}
+
+.workbench-dialog p {
+  line-height: 1.7;
+}
+
+.workbench-close {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.workbench-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 40px;
+  background: var(--espresso);
+  color: var(--cream-light);
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .workbench {
+    padding: 55px 6%;
+  }
+
+  .workbench-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workbench-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
