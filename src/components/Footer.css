@@ -30,7 +30,7 @@
 .footer-tagline {
   margin: 10px 0 0;
   color: var(--muted);
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   line-height: 1.6;
 }

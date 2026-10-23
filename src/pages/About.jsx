@@ -10,13 +10,13 @@ const currentProjects = projects.filter((project) =>
   projectIds.includes(project.id),
 );
 
-function SectionHeading({ index, eyebrow, title }) {
+function SectionHeading({ index, eyebrow, title, id }) {
   return (
     <div className="about-section-heading">
       <span className="about-section-index">{index}</span>
       <div>
         <p className="about-eyebrow">{eyebrow}</p>
-        <h2>{title}</h2>
+        <h2 id={id}>{title}</h2>
       </div>
     </div>
   );
@@ -36,7 +36,7 @@ function About() {
             behind <em>the build.</em>
           </h1>
           <p className="about-lede">
-            I’m Khisha, a Software Engineer who designs and builds thoughtful
+            I’m Lisa LaKisha, a Software Engineer who designs and builds thoughtful
             digital experiences, connecting intuitive interfaces with the
             systems that power them.
           </p>
@@ -74,24 +74,49 @@ function About() {
       <section className="about-section about-education" aria-labelledby="education-title">
         <SectionHeading
           index="02"
-          eyebrow="TECHNICAL EDUCATION & PROFESSIONAL DEVELOPMENT"
-          title="Software Engineering"
+          eyebrow="EDUCATION & CREDENTIALS"
+          title="Technical Education & Professional Development"
+          id="education-title"
         />
-        <div className="about-education-card">
-          <div className="about-education-icon">
-            <GraduationCap size={25} strokeWidth={1.5} aria-hidden="true" />
-          </div>
-          <div>
-            <p className="about-eyebrow">{education.studyProgram}</p>
-            <h2 id="education-title">{education.institution}</h2>
-            <p className="about-education-date">{education.date}</p>
-            <p className="about-education-label">RELEVANT LEARNING AREAS</p>
-            <ul className="about-learning-areas">
-              {education.learningAreas.map((area) => (
-                <li key={area}>{area}</li>
-              ))}
-            </ul>
-          </div>
+        <p className="about-education-summary">{education.summary}</p>
+        <div className="about-education-records">
+          {education.records.map((record) => (
+            <article className="about-education-card" key={record.id}>
+              <div className="about-education-icon">
+                {record.id === "moringa" ? (
+                  <GraduationCap size={25} strokeWidth={1.5} aria-hidden="true" />
+                ) : (
+                  <BookOpen size={25} strokeWidth={1.5} aria-hidden="true" />
+                )}
+              </div>
+              <div>
+                <h3 className="about-education-programme">
+                  {record.programme}
+                </h3>
+                <p className="about-education-institution">
+                  {record.institution}
+                </p>
+                <p className="about-education-date">{record.date}</p>
+                {record.credential && (
+                  <p className="about-education-credential">
+                    {record.credential}
+                  </p>
+                )}
+                {record.learningAreas && (
+                  <>
+                    <p className="about-education-label">
+                      RELEVANT LEARNING AREAS
+                    </p>
+                    <ul className="about-learning-areas">
+                      {record.learningAreas.map((area) => (
+                        <li key={area}>{area}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

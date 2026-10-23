@@ -1,64 +1,94 @@
+import { useEffect, useRef } from "react";
+import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { projects } from "../data/projects";
 import "../App.css";
-import { Code2, X } from "lucide-react";
+
+const featuredProjects = projects.slice(0, 3);
+const previewTechnologies = [
+  ...new Set(featuredProjects.flatMap((project) => project.stack)),
+].slice(0, 7);
+
 function Home() {
+  const homeRef = useRef(null);
+
+  useEffect(() => {
+    homeRef.current?.classList.add("home-reveal-ready");
+    const revealItems = homeRef.current?.querySelectorAll(".home-reveal");
+    if (!revealItems) return undefined;
+
+    const showAll = () =>
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      showAll();
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
-      <section className="hero" id="home">
-        <div className="hero-copy">
-          <p className="hero-label">
-            SOFTWARE ENGINEER
-          </p>
-
-          <h1 aria-label="Hi, I'm Khisha.">
-            Hi, I&apos;m
-            <br />
-            <span>Khisha.</span>
-            <span className="heart" aria-hidden="true">
-              ♡
-            </span>
-          </h1>
-
-          <p className="hero-role">Software Engineer.</p>
-
-          <div className="scribble" />
-
+    <div className="home-page" ref={homeRef}>
+      <section className="hero" id="home" aria-labelledby="home-title">
+        <div className="hero-copy home-reveal">
+          <p className="hero-name">Lisa LaKisha</p>
+          <p className="hero-role">Software Engineer</p>
+          <h1 id="home-title">Engineering ideas into experiences.</h1>
           <p className="hero-description">
-            I design and build thoughtful digital experiences, connecting
-            intuitive interfaces with the systems that power them.
+            I build with curiosity,{" "}
+            <span className="hero-emphasis">engineer with intention</span>, and
+            believe the best digital experiences make complex things feel
+            effortless. From shaping ideas to developing functional solutions,
+            I&apos;m drawn to making technology both powerful and human.
           </p>
 
-          <Link to="/projects" className="explore-btn">
-            Explore My Work <span>→</span>
-          </Link>
-
-          <div className="social-links">
-            <a
-              href="https://github.com/khishaplays"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Khisha's GitHub profile"
-            >
-              <Code2 size={18} aria-hidden="true" />
-              <span>GitHub</span>
-            </a>
-
-            <Link to="/contact" aria-label="Contact">
-              <X size={18} aria-hidden="true" />
-              <span>Contact</span>
+          <div className="hero-actions">
+            <Link to="/projects" className="explore-btn">
+              Explore My Work ↗
+            </Link>
+            <Link to="/contact" className="connect-btn hero-connect-btn">
+              Let&apos;s Connect →
             </Link>
           </div>
 
+          <a
+            className="home-github-link"
+            href="https://github.com/khishaplays"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit GitHub profile"
+          >
+            <Code2 size={17} aria-hidden="true" />
+            GitHub
+            <ExternalLink size={13} aria-hidden="true" />
+          </a>
         </div>
 
-        <div className="hero-visual">
+        <div className="hero-visual home-reveal">
           <div
             className="hero-placeholder-art"
             role="img"
-            aria-label="Illustrated latte-colored workspace placeholder. Replace this panel with a personal photograph when ready."
+            aria-label="Illustrated latte-colored workspace placeholder, ready to be replaced with a personal photograph."
           >
             <span className="hero-placeholder-label">
-              THE STUDIO / IMAGE PLACEHOLDER
+              PERSONAL PHOTO / PLACEHOLDER
             </span>
             <svg
               className="hero-workspace-illustration"
@@ -116,33 +146,80 @@ function Home() {
               />
             </svg>
             <span className="hero-placeholder-caption">
-              YOUR PHOTO, WHEN YOU’RE READY
+              REPLACE WITH YOUR PORTRAIT
             </span>
-          </div>
-
-          <div className="paper-note note-one" aria-hidden="true">
-            Currently
-            <br />
-            building something
-            <br />
-            better ♡
-          </div>
-
-          <div className="paper-note note-two" aria-hidden="true">
-            Good ideas.
-            <br />
-            Good code.
-            <br />
-            Great things. ♡
-          </div>
-
-          <div className="scroll-note" aria-hidden="true">
-            <span>SCROLL</span>
-            <span>↓</span>
           </div>
         </div>
       </section>
-    </>
+
+      <section
+        className="home-section home-featured"
+        aria-labelledby="home-featured-title"
+      >
+        <div className="home-section-heading home-reveal">
+          <div>
+            <p className="home-section-eyebrow">SELECTED WORK / 01</p>
+            <h2 id="home-featured-title">On the workbench</h2>
+          </div>
+          <Link className="home-section-link" to="/projects">
+            Explore all projects <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div className="home-project-grid">
+          {featuredProjects.map((project) => (
+            <article className="home-project-card home-reveal" key={project.id}>
+              <div className="home-project-meta">
+                <span>{project.number}</span>
+                <span>{project.status}</span>
+              </div>
+              <h3>
+                <Link to="/projects">{project.name}</Link>
+              </h3>
+              <p>{project.description}</p>
+              <div
+                className="home-project-tags"
+                aria-label={`${project.name} technologies`}
+              >
+                {project.stack.slice(0, 4).map((technology) => (
+                  <span key={technology}>{technology}</span>
+                ))}
+              </div>
+              <a
+                className="home-project-repository"
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.name} repository on GitHub`}
+              >
+                View repository <ExternalLink size={14} aria-hidden="true" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-section home-toolkit" aria-labelledby="home-toolkit-title">
+        <div className="home-toolkit-copy home-reveal">
+          <p className="home-section-eyebrow">TOOLS & TECHNOLOGIES / 02</p>
+          <h2 id="home-toolkit-title">A toolkit shaped by the work.</h2>
+          <p>
+            Technologies represented across the projects and engineering
+            practice in this portfolio.
+          </p>
+        </div>
+        <div className="home-toolkit-preview home-reveal">
+          <ul className="home-technology-list" aria-label="Technology preview">
+            {previewTechnologies.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+          <Link className="home-section-link" to="/skills">
+            Explore the Toolkit <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }
 

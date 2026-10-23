@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
-
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+  --font-body: "Calibri", "Segoe UI", Arial, sans-serif;
+  --font-heading: "Calibri Light", "Calibri", "Segoe UI", Arial, sans-serif;
 
   --cream: #f3e3cf;
   --cream-light: #f8ecdc;
@@ -62,4 +62,19 @@ img {
 ::selection {
   background: var(--mocha);
   color: var(--cream-light);
+}
+
+html body .site * {
+  font-family: var(--font-body);
+}
+
+html body .site :is(h1, h2, h3, h4) {
+  font-family: var(--font-heading);
+  font-weight: 300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

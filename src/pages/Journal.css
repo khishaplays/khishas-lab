@@ -23,7 +23,7 @@
 }
 
 .journal-heading h1 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 500;
   letter-spacing: -0.05em;
@@ -57,7 +57,7 @@
 }
 
 .journal-stamp span {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-body);
   font-size: 1.5rem;
 }
 
@@ -149,7 +149,7 @@
 }
 
 .journal-card h2 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 500;
   margin: 16px 0 12px;
@@ -193,7 +193,7 @@
 
 .journal-detail-block h3,
 .journal-takeaway h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 10px;

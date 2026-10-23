@@ -1,3 +1,34 @@
+const education = {
+  summary:
+    "My background combines software engineering and software innovation, bringing together technical problem-solving, creative thinking, and a practical approach to building meaningful digital solutions.",
+  records: [
+    {
+      id: "moringa",
+      institution: "Moringa School",
+      programme: "Software Engineering",
+      date: "May 2026 – December 2026",
+      learningAreas: [
+        "Python",
+        "JavaScript",
+        "React",
+        "APIs",
+        "Databases",
+        "Git/GitHub",
+        "Collaborative software development",
+      ],
+    },
+    {
+      id: "strathmore",
+      institution: "Strathmore University",
+      programme: "Software Innovation",
+      date: "2025 / 2026",
+      credential: "Certificate",
+    },
+  ],
+};
+
+export const editableJourneyDetails = { education };
+
 export const journeyMilestones = [
   {
     id: "learning",
@@ -5,12 +36,10 @@ export const journeyMilestones = [
     stage: "Learning",
     eyebrow: "TECHNICAL EDUCATION & PROFESSIONAL DEVELOPMENT",
     title: "Software engineering at Moringa School",
-    status: "Education",
-    date: "May 2026 – Present",
-    summary:
-      "Technical education and professional development in Software Engineering at Moringa School.",
-    details:
-      "Current learning areas include Python, JavaScript, React, APIs, databases, Git/GitHub, and collaborative software development.",
+    status: "Learning",
+    date: "",
+    summary: education.summary,
+    details: education.summary,
     projectIds: ["wanderly", "scribe", "mocha-desk", "task-manager"],
   },
   {
@@ -58,20 +87,3 @@ export const journeyMilestones = [
     portfolioUrl: "https://github.com/khishaplays/khishas-lab",
   },
 ];
-
-export const editableJourneyDetails = {
-  education: {
-    institution: "Moringa School",
-    studyProgram: "Software Engineering",
-    date: "May 2026 – Present",
-    learningAreas: [
-      "Python",
-      "JavaScript",
-      "React",
-      "APIs",
-      "Databases",
-      "Git/GitHub",
-      "Collaborative software development",
-    ],
-  },
-};

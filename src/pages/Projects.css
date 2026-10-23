@@ -19,7 +19,7 @@
 }
 
 .workbench-intro h1 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 500;
   letter-spacing: -0.05em;
@@ -56,7 +56,7 @@
 
 .workbench-section-heading h2 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -149,7 +149,7 @@
 }
 
 .workbench-art-title h2 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 500;
   margin-top: 10px;
@@ -172,7 +172,7 @@
 }
 
 .workbench-card-content h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 500;
   margin: 18px 0 12px;
@@ -232,13 +232,13 @@
 }
 
 .workbench-dialog h2 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin: 15px 0;
 }
 
 .workbench-dialog h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   margin: 25px 0 10px;
 }
 
@@ -320,7 +320,7 @@
 .workbench-archive-art .workbench-art-title h3 {
   margin: 10px 0 0;
   overflow-wrap: anywhere;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   font-weight: 500;
 }

@@ -58,15 +58,31 @@ function MilestoneDetails({ milestone, isOpen }) {
           <p className="journey-detail-label">
             TECHNICAL EDUCATION &amp; PROFESSIONAL DEVELOPMENT
           </p>
-          <h3>{education.institution}</h3>
-          <p>{education.studyProgram}</p>
-          <p>{education.date}</p>
-          <p className="journey-learning-label">RELEVANT LEARNING AREAS</p>
-          <ul className="journey-learning-areas">
-            {education.learningAreas.map((area) => (
-              <li key={area}>{area}</li>
+          <p className="journey-education-summary">{education.summary}</p>
+          <div className="journey-education-records">
+            {education.records.map((record) => (
+              <article className="journey-education-record" key={record.id}>
+                <h3>{record.programme}</h3>
+                <p className="journey-education-institution">
+                  {record.institution}
+                </p>
+                <p>{record.date}</p>
+                {record.credential && <p>{record.credential}</p>}
+                {record.learningAreas && (
+                  <>
+                    <p className="journey-learning-label">
+                      RELEVANT LEARNING AREAS
+                    </p>
+                    <ul className="journey-learning-areas">
+                      {record.learningAreas.map((area) => (
+                        <li key={area}>{area}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </article>
             ))}
-          </ul>
+          </div>
         </div>
       )}
 

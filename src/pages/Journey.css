@@ -33,7 +33,7 @@
 
 .journey-intro h1 {
   margin: 18px 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(3.6rem, 8vw, 6.8rem);
   font-weight: 500;
   letter-spacing: -0.06em;
@@ -49,7 +49,7 @@
   max-width: 600px;
   margin: 0;
   color: var(--muted);
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.7;
 }
@@ -70,7 +70,7 @@
 }
 
 .journey-stamp span {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-body);
   font-size: 1.45rem;
 }
 
@@ -89,7 +89,7 @@
 
 .journey-section-heading h2 {
   margin: 7px 0 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.1rem);
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -97,7 +97,7 @@
 
 .journey-section-mark {
   color: var(--caramel);
-  font-family: "Caveat", cursive;
+  font-family: var(--font-body);
   font-size: 2rem;
 }
 
@@ -203,7 +203,7 @@
   border-radius: 50%;
   background: var(--cream-light);
   color: var(--mocha);
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 0.8rem;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .journey-card-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.55rem, 3vw, 2.15rem);
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -322,9 +322,10 @@
   background: rgba(223, 194, 164, 0.2);
 }
 
-.journey-education-note h3 {
+.journey-education-note h3,
+.journey-education-record h3 {
   margin: 7px 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 500;
 }
@@ -334,6 +335,49 @@
   color: var(--muted);
   font-size: 0.87rem;
   line-height: 1.65;
+}
+
+.journey-education-summary {
+  margin: 10px 0 18px;
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.journey-education-records {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.journey-education-record {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid rgba(44, 25, 19, 0.13);
+  background: rgba(248, 236, 220, 0.58);
+}
+
+.journey-education-record h3 {
+  margin: 0 0 7px;
+  color: var(--espresso);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+}
+
+.journey-education-record .journey-education-institution {
+  margin-top: 0;
+  color: var(--mocha);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.journey-education-record > p:not(.journey-detail-label):not(.journey-learning-label) {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .journey-education-note .journey-learning-label {
@@ -421,7 +465,7 @@
 
 .journey-project h4 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: 0.97rem;
   font-weight: 500;
 }
@@ -553,6 +597,10 @@
 
   .journey-section-mark {
     display: none;
+  }
+
+  .journey-education-records {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .journey-controls {
