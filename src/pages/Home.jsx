@@ -7,23 +7,25 @@ function Home() {
       <section className="hero" id="home">
         <div className="hero-copy">
           <p className="hero-label">
-            SOFTWARE DEVELOPER <span>•</span> NAIROBI, KE
+            SOFTWARE ENGINEER
           </p>
 
-          <h1>
-            Hi, I'm
+          <h1 aria-label="Hi, I'm Khisha.">
+            Hi, I&apos;m
             <br />
-            <span>Khisha</span>
-            <span className="heart">♡</span>
+            <span>Khisha.</span>
+            <span className="heart" aria-hidden="true">
+              ♡
+            </span>
           </h1>
 
-          <p className="handwritten">where ideas get brewed &amp; built.</p>
+          <p className="hero-role">Software Engineer.</p>
 
           <div className="scribble" />
 
           <p className="hero-description">
-            I build thoughtful digital experiences with code, creativity and
-            curiosity — usually with a cup of coffee nearby.
+            I design and build thoughtful digital experiences, connecting
+            intuitive interfaces with the systems that power them.
           </p>
 
           <Link to="/projects" className="explore-btn">
@@ -47,13 +49,6 @@ function Home() {
             </Link>
           </div>
 
-          <div className="availability">
-            <span className="availability-dot" />
-            <div>
-              <small>CURRENTLY</small>
-              <p>Open to opportunities</p>
-            </div>
-          </div>
         </div>
 
         <div className="hero-visual">

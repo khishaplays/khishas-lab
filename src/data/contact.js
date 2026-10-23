@@ -4,7 +4,7 @@ export const contactDetails = {
     url: "https://github.com/khishaplays",
   },
   linkedin: "",
-  email: "",
+  email: "lakhishaloud028@gmail.com",
 };
 
 export const collaborationAreas = [

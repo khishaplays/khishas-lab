@@ -55,16 +55,18 @@ function MilestoneDetails({ milestone, isOpen }) {
     >
       {education && (
         <div className="journey-education-note">
-          <p className="journey-detail-label">EDUCATION</p>
+          <p className="journey-detail-label">
+            TECHNICAL EDUCATION &amp; PROFESSIONAL DEVELOPMENT
+          </p>
           <h3>{education.institution}</h3>
-          {education.studyProgram && <p>{education.studyProgram}</p>}
-          {(education.startDate || education.endDate) && (
-            <p>
-              {[education.startDate, education.endDate]
-                .filter(Boolean)
-                .join(" — ")}
-            </p>
-          )}
+          <p>{education.studyProgram}</p>
+          <p>{education.date}</p>
+          <p className="journey-learning-label">RELEVANT LEARNING AREAS</p>
+          <ul className="journey-learning-areas">
+            {education.learningAreas.map((area) => (
+              <li key={area}>{area}</li>
+            ))}
+          </ul>
         </div>
       )}
 

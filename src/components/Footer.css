@@ -54,6 +54,13 @@
   color: var(--caramel);
 }
 
+.footer-professional-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
 .footer-professional-link {
   display: inline-flex;
   align-items: center;

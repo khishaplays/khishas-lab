@@ -4,6 +4,7 @@ import {
   Code2,
   Compass,
   Coffee,
+  Mail,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -68,7 +69,7 @@ function Contact() {
             href: `mailto:${contactDetails.email}`,
             label: "Email",
             description: contactDetails.email,
-            icon: Coffee,
+            icon: Mail,
           },
         ]
       : []),
@@ -91,11 +92,9 @@ function Contact() {
           </p>
           <a
             className="contact-primary-cta"
-            href={contactDetails.github.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${contactDetails.email}`}
           >
-            Find me on GitHub <ArrowUpRight size={17} aria-hidden="true" />
+            Email me <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </div>
         <aside className="contact-note" aria-label="Studio note">

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2 } from "lucide-react";
+import { ArrowUpRight, Code2, Compass, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { contactDetails } from "../data/contact";
@@ -23,7 +23,7 @@ function Footer() {
             KHISHA&apos;S LAB <span aria-hidden="true">☕</span>
           </Link>
           <p className="footer-tagline">
-            A little curiosity, a lot of practice.
+            Software Engineer building thoughtful digital experiences.
           </p>
         </div>
 
@@ -35,16 +35,39 @@ function Footer() {
           ))}
         </nav>
 
-        <a
-          className="footer-professional-link"
-          href={contactDetails.github.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Code2 size={17} aria-hidden="true" />
-          GitHub
-          <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
+        <div className="footer-professional-links">
+          <a
+            className="footer-professional-link"
+            href={contactDetails.github.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Code2 size={17} aria-hidden="true" />
+            GitHub
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+          {contactDetails.email && (
+            <a
+              className="footer-professional-link"
+              href={`mailto:${contactDetails.email}`}
+            >
+              <Mail size={17} aria-hidden="true" />
+              Email
+            </a>
+          )}
+          {contactDetails.linkedin && (
+            <a
+              className="footer-professional-link"
+              href={contactDetails.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Compass size={17} aria-hidden="true" />
+              LinkedIn
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          )}
+        </div>
       </div>
 
       <div className="site-footer-bottom">

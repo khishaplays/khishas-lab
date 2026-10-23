@@ -336,6 +336,31 @@
   line-height: 1.65;
 }
 
+.journey-education-note .journey-learning-label {
+  margin-top: 17px;
+  color: var(--caramel);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.journey-learning-areas {
+  display: flex;
+  margin: 8px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+}
+
+.journey-learning-areas li {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(173, 118, 87, 0.12);
+  color: var(--espresso);
+  font-size: 0.7rem;
+}
+
 .journey-reflection {
   max-width: 800px;
 }

@@ -2,6 +2,7 @@ import { ArrowDownRight, ArrowUpRight, BookOpen, Compass, GraduationCap, Lightbu
 import { Link } from "react-router-dom";
 
 import { projects } from "../data/projects";
+import { editableJourneyDetails } from "../data/journey";
 import "./About.css";
 
 const projectIds = ["wanderly", "scribe"];
@@ -22,6 +23,8 @@ function SectionHeading({ index, eyebrow, title }) {
 }
 
 function About() {
+  const education = editableJourneyDetails.education;
+
   return (
     <div className="about-page">
       <section className="about-intro" aria-labelledby="about-title">
@@ -33,9 +36,9 @@ function About() {
             behind <em>the build.</em>
           </h1>
           <p className="about-lede">
-            I’m Khisha, a software developer learning by making thoughtful
-            digital experiences—one question, experiment, and cup of coffee at
-            a time.
+            I’m Khisha, a Software Engineer who designs and builds thoughtful
+            digital experiences, connecting intuitive interfaces with the
+            systems that power them.
           </p>
           <Link className="about-text-link" to="/projects">
             Explore what I’m building <ArrowDownRight size={17} />
@@ -58,17 +61,12 @@ function About() {
           title="My story"
         />
         <div className="about-section-copy">
-          <h2 id="story-title">Learning by building, and building to learn.</h2>
+          <h2 id="story-title">From clear interfaces to dependable systems.</h2>
           <p>
-            My software engineering journey is taking shape through hands-on
-            projects. Working on ideas like a destination discovery platform
-            and a developer activity tracker gives me practical questions to
-            explore—from how data moves between layers to how an interface
-            should guide its user.
-          </p>
-          <p className="about-editor-prompt">
-            Personal detail to add: [What first sparked your interest in
-            software engineering?]
+            My work spans React interfaces, Flask-backed applications, and
+            Python developer tools. I focus on understanding how each part
+            fits together—from the experience a user sees to the data and
+            services behind it.
           </p>
         </div>
       </section>
@@ -76,24 +74,24 @@ function About() {
       <section className="about-section about-education" aria-labelledby="education-title">
         <SectionHeading
           index="02"
-          eyebrow="THE CLASSROOM"
-          title="Education"
+          eyebrow="TECHNICAL EDUCATION & PROFESSIONAL DEVELOPMENT"
+          title="Software Engineering"
         />
         <div className="about-education-card">
           <div className="about-education-icon">
             <GraduationCap size={25} strokeWidth={1.5} aria-hidden="true" />
           </div>
           <div>
-            <p className="about-eyebrow">UNIVERSITY</p>
-            <h2 id="education-title">Strathmore University</h2>
-            <p className="about-editor-prompt">
-              [Add your programme, area of study, or other details you’d like
-              to share.]
-            </p>
+            <p className="about-eyebrow">{education.studyProgram}</p>
+            <h2 id="education-title">{education.institution}</h2>
+            <p className="about-education-date">{education.date}</p>
+            <p className="about-education-label">RELEVANT LEARNING AREAS</p>
+            <ul className="about-learning-areas">
+              {education.learningAreas.map((area) => (
+                <li key={area}>{area}</li>
+              ))}
+            </ul>
           </div>
-          <span className="about-margin-mark" aria-hidden="true">
-            +
-          </span>
         </div>
       </section>
 

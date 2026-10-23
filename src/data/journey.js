@@ -3,17 +3,14 @@ export const journeyMilestones = [
     id: "learning",
     number: "01",
     stage: "Learning",
-    eyebrow: "EDUCATION & FOUNDATIONS",
-    title: "Learning the foundations",
+    eyebrow: "TECHNICAL EDUCATION & PROFESSIONAL DEVELOPMENT",
+    title: "Software engineering at Moringa School",
     status: "Education",
-    date: "",
+    date: "May 2026 – Present",
     summary:
-      "The portfolio identifies Strathmore University as part of Khisha's education. Foundational learning is also reflected in the technologies used across the listed projects.",
+      "Technical education and professional development in Software Engineering at Moringa School.",
     details:
-      "Project data shows hands-on work spanning frontend interfaces, Python applications, backend services, and command-line tools. No study programme or dates are included, so those details remain editable and are not inferred here.",
-    studyProgram: "",
-    startDate: "",
-    endDate: "",
+      "Current learning areas include Python, JavaScript, React, APIs, databases, Git/GitHub, and collaborative software development.",
     projectIds: ["wanderly", "scribe", "mocha-desk", "task-manager"],
   },
   {
@@ -64,9 +61,17 @@ export const journeyMilestones = [
 
 export const editableJourneyDetails = {
   education: {
-    institution: "Strathmore University",
-    studyProgram: "",
-    startDate: "",
-    endDate: "",
+    institution: "Moringa School",
+    studyProgram: "Software Engineering",
+    date: "May 2026 – Present",
+    learningAreas: [
+      "Python",
+      "JavaScript",
+      "React",
+      "APIs",
+      "Databases",
+      "Git/GitHub",
+      "Collaborative software development",
+    ],
   },
 };
