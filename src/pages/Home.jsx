@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../App.css";
-import { Code2 } from "lucide-react";
+import { Code2, X } from "lucide-react";
 function Home() {
   return (
     <>
@@ -57,12 +57,75 @@ function Home() {
         </div>
 
         <div className="hero-visual">
-          <img
-            src="/hero-latte.jpg"
-            alt="Warm developer workspace with laptop and coffee"
-          />
+          <div
+            className="hero-placeholder-art"
+            role="img"
+            aria-label="Illustrated latte-colored workspace placeholder. Replace this panel with a personal photograph when ready."
+          >
+            <span className="hero-placeholder-label">
+              THE STUDIO / IMAGE PLACEHOLDER
+            </span>
+            <svg
+              className="hero-workspace-illustration"
+              viewBox="0 0 560 420"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M80 320h400l-34 27H114l-34-27Z"
+                fill="var(--espresso)"
+                fillOpacity=".12"
+              />
+              <path
+                d="M149 101h256a12 12 0 0 1 12 12v157H137V113a12 12 0 0 1 12-12Z"
+                fill="var(--espresso)"
+              />
+              <path
+                d="M153 117h248v132H153z"
+                fill="var(--cream-light)"
+                fillOpacity=".92"
+              />
+              <path
+                d="M171 139h72m-72 21h130m-130 21h93m-93 21h119"
+                stroke="var(--caramel)"
+                strokeLinecap="round"
+                strokeWidth="5"
+                strokeOpacity=".72"
+              />
+              <circle cx="377" cy="140" r="10" fill="var(--latte)" />
+              <path
+                d="M125 270h304l47 43a9 9 0 0 1-7 15H84a9 9 0 0 1-7-15l48-43Z"
+                fill="var(--mocha)"
+              />
+              <path
+                d="M232 286h91l-8 22h-75l-8-22Z"
+                fill="var(--latte)"
+                fillOpacity=".8"
+              />
+              <path
+                d="M367 215h63v67h-63z"
+                fill="var(--caramel)"
+                fillOpacity=".86"
+              />
+              <path
+                d="M430 228h12a18 18 0 0 1 0 36h-12"
+                stroke="var(--mocha)"
+                strokeWidth="8"
+              />
+              <path
+                d="M380 203c-8-11 8-14 0-26m21 26c-8-11 8-14 0-26"
+                stroke="var(--cream-light)"
+                strokeLinecap="round"
+                strokeWidth="4"
+                strokeOpacity=".8"
+              />
+            </svg>
+            <span className="hero-placeholder-caption">
+              YOUR PHOTO, WHEN YOU’RE READY
+            </span>
+          </div>
 
-          <div className="paper-note note-one">
+          <div className="paper-note note-one" aria-hidden="true">
             Currently
             <br />
             building something
@@ -70,7 +133,7 @@ function Home() {
             better ♡
           </div>
 
-          <div className="paper-note note-two">
+          <div className="paper-note note-two" aria-hidden="true">
             Good ideas.
             <br />
             Good code.
@@ -78,7 +141,7 @@ function Home() {
             Great things. ♡
           </div>
 
-          <div className="scroll-note">
+          <div className="scroll-note" aria-hidden="true">
             <span>SCROLL</span>
             <span>↓</span>
           </div>

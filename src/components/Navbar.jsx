@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navigation = [
@@ -14,14 +14,23 @@ const navigation = [
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuToggleRef = useRef(null);
+
+  function handleMenuKeyDown(event) {
+    if (event.key === "Escape" && menuOpen) {
+      setMenuOpen(false);
+      menuToggleRef.current?.focus();
+    }
+  }
 
   return (
-    <header className="navbar">
+    <header className="navbar" onKeyDown={handleMenuKeyDown}>
       <Link to="/" className="logo">
         KHISHA'S LAB <span>☕</span>
       </Link>
 
       <nav
+        id="primary-navigation"
         className={`nav-links ${menuOpen ? "nav-open" : ""}`}
         aria-label="Main navigation"
       >
@@ -43,9 +52,11 @@ function Navbar() {
       </Link>
 
       <button
+        ref={menuToggleRef}
         type="button"
         className="mobile-menu-toggle"
         aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-controls="primary-navigation"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
       >

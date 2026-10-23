@@ -37,6 +37,31 @@
   color: var(--muted);
 }
 
+.workbench-featured,
+.workbench-archive {
+  margin-top: 64px;
+}
+
+.workbench-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.workbench-section-heading .workbench-label {
+  margin: 0 0 8px;
+}
+
+.workbench-section-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
 .workbench-controls {
   display: flex;
   justify-content: space-between;
@@ -67,6 +92,15 @@
 .workbench-filters button.selected {
   background: var(--espresso);
   color: var(--cream-light);
+}
+
+.workbench-filters button:focus-visible,
+.workbench-open:focus-visible,
+.workbench-close:focus-visible,
+.workbench-retry:focus-visible,
+.workbench-github:focus-visible {
+  outline: 3px solid var(--caramel);
+  outline-offset: 4px;
 }
 
 .workbench-count {
@@ -232,6 +266,69 @@
   margin-top: 10px;
 }
 
+.workbench-archive-message {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 24px;
+  border: 1px dashed rgba(44, 25, 19, 0.25);
+  background: rgba(247, 234, 217, 0.65);
+  color: var(--muted);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.workbench-archive-message code {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(173, 118, 87, 0.14);
+  color: var(--espresso);
+  overflow-wrap: anywhere;
+}
+
+.workbench-archive-error {
+  border-color: rgba(112, 71, 55, 0.55);
+}
+
+.workbench-archive-error p {
+  margin: 0 0 14px;
+}
+
+.workbench-retry {
+  padding: 9px 15px;
+  border: 1px solid var(--espresso);
+  border-radius: 999px;
+  background: var(--espresso);
+  color: var(--cream-light);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.workbench-retry:hover {
+  transform: translateY(-2px);
+  background: var(--mocha);
+}
+
+.workbench-archive-art {
+  background: #e5d3bf;
+}
+
+.workbench-archive-card:nth-child(2n) .workbench-archive-art {
+  background: #d6c0b5;
+}
+
+.workbench-archive-art .workbench-art-title h3 {
+  margin: 10px 0 0;
+  overflow-wrap: anywhere;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 500;
+}
+
+.workbench-archive-link {
+  gap: 9px;
+}
+
 @media (max-width: 760px) {
   .workbench {
     padding: 55px 6%;
@@ -244,5 +341,27 @@
   .workbench-controls {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .workbench-featured,
+  .workbench-archive {
+    margin-top: 48px;
+  }
+
+  .workbench-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .workbench-archive-art {
+    min-height: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench-card,
+  .workbench-retry {
+    transition: none;
   }
 }

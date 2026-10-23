@@ -1,0 +1,480 @@
+.toolkit-page {
+  min-height: 100vh;
+  padding: 85px 7% 100px;
+  background: var(--cream-light);
+  color: var(--espresso);
+}
+
+.toolkit-intro {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  margin: -85px -7% 0;
+  padding: 75px 7%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(44, 25, 19, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 25, 19, 0.025) 1px, transparent 1px),
+    var(--cream-light);
+  background-size: 32px 32px;
+  border-bottom: 1px solid rgba(44, 25, 19, 0.16);
+}
+
+.toolkit-intro-copy {
+  max-width: 740px;
+}
+
+.toolkit-eyebrow,
+.toolkit-project-label {
+  margin: 0;
+  color: var(--caramel);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  line-height: 1.6;
+}
+
+.toolkit-intro h1 {
+  margin: 18px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.5rem, 8vw, 6.7rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.toolkit-intro h1 em {
+  color: var(--caramel);
+  font-weight: 500;
+}
+
+.toolkit-intro-copy > p:last-child {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.toolkit-stamp {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px dashed var(--caramel);
+  border-radius: 50%;
+  color: var(--mocha);
+  transform: rotate(7deg);
+}
+
+.toolkit-stamp span {
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+}
+
+.toolkit-section {
+  margin-top: 70px;
+}
+
+.toolkit-section-heading {
+  display: flex;
+  margin-bottom: 26px;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.toolkit-section-index {
+  padding-top: 4px;
+  color: var(--caramel);
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+}
+
+.toolkit-section-heading h2 {
+  margin: 6px 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.toolkit-controls {
+  display: flex;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(44, 25, 19, 0.18);
+}
+
+.toolkit-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.toolkit-filter {
+  padding: 9px 16px;
+  border: 1px solid rgba(44, 25, 19, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--espresso);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.toolkit-filter:hover,
+.toolkit-filter[aria-pressed="true"] {
+  background: var(--espresso);
+  color: var(--cream-light);
+}
+
+.toolkit-count {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.13em;
+  white-space: nowrap;
+}
+
+.toolkit-browser {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.toolkit-technology-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.toolkit-technology-button {
+  display: flex;
+  min-width: 0;
+  min-height: 75px;
+  padding: 14px 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(44, 25, 19, 0.15);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--espresso);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.toolkit-technology-button:hover {
+  border-color: var(--caramel);
+  transform: translateY(-2px);
+}
+
+.toolkit-technology-button[aria-pressed="true"] {
+  border-color: var(--mocha);
+  background: #ead7c2;
+  box-shadow: inset 3px 0 0 var(--caramel);
+}
+
+.toolkit-technology-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+}
+
+.toolkit-technology-category {
+  color: var(--muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.toolkit-detail {
+  min-height: 100%;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(44, 25, 19, 0.16);
+  border-radius: 5px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      rgba(44, 25, 19, 0.045) 36px
+    ),
+    rgba(247, 234, 217, 0.72);
+}
+
+.toolkit-detail-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toolkit-detail-topline > span:last-child {
+  color: var(--muted);
+  font-size: 0.61rem;
+  letter-spacing: 0.12em;
+}
+
+.toolkit-detail h3 {
+  margin: 20px 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.toolkit-detail-summary,
+.toolkit-detail-copy {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.toolkit-detail-summary {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.toolkit-detail-copy {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+}
+
+.toolkit-related-projects {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(44, 25, 19, 0.16);
+}
+
+.toolkit-related-projects h4 {
+  margin: 0 0 13px;
+  color: var(--mocha);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+}
+
+.toolkit-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.toolkit-project-link {
+  display: inline-flex;
+  min-height: 40px;
+  padding: 9px 12px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(44, 25, 19, 0.2);
+  border-radius: 999px;
+  color: var(--espresso);
+  font-size: 0.76rem;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.toolkit-project-link:hover {
+  border-color: var(--mocha);
+  background: rgba(223, 194, 164, 0.36);
+}
+
+.toolkit-project-references {
+  display: grid;
+  gap: 12px;
+}
+
+.toolkit-project-reference {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.toolkit-project-reference > span {
+  font-family: "Playfair Display", serif;
+  font-size: 0.98rem;
+}
+
+.toolkit-project-reference > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.toolkit-no-projects {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.toolkit-exploring {
+  padding: 28px;
+  border: 1px dashed rgba(112, 71, 55, 0.45);
+  background: rgba(247, 234, 217, 0.58);
+}
+
+.toolkit-exploring > p:last-child {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.toolkit-exploring-list {
+  display: flex;
+  margin: 14px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 9px;
+  list-style: none;
+}
+
+.toolkit-exploring-list li {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(173, 118, 87, 0.13);
+  font-size: 0.8rem;
+}
+
+.toolkit-footer {
+  display: flex;
+  margin-top: 65px;
+  padding-top: 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(44, 25, 19, 0.18);
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+}
+
+.toolkit-footer span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Caveat", cursive;
+  font-size: 1.15rem;
+  letter-spacing: normal;
+}
+
+.toolkit-page :focus-visible {
+  outline: 3px solid var(--mocha);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .toolkit-page {
+    padding: 55px 6% 75px;
+  }
+
+  .toolkit-intro {
+    min-height: 270px;
+    margin: -55px -6% 0;
+    padding: 55px 6%;
+  }
+
+  .toolkit-stamp {
+    width: 120px;
+    height: 120px;
+  }
+
+  .toolkit-section {
+    margin-top: 54px;
+  }
+
+  .toolkit-browser {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toolkit-technology-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .toolkit-project-reference {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolkit-project-reference > div {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .toolkit-page {
+    padding: 45px 5% 60px;
+  }
+
+  .toolkit-intro {
+    min-height: 0;
+    margin: -45px -5% 0;
+    padding: 50px 5%;
+  }
+
+  .toolkit-intro h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .toolkit-stamp {
+    display: none;
+  }
+
+  .toolkit-section {
+    margin-top: 45px;
+  }
+
+  .toolkit-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolkit-filters {
+    gap: 8px;
+  }
+
+  .toolkit-filter {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .toolkit-technology-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolkit-technology-button {
+    min-height: 68px;
+    padding: 12px;
+  }
+
+  .toolkit-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolkit-exploring {
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolkit-filter,
+  .toolkit-technology-button,
+  .toolkit-project-link {
+    transition: none;
+  }
+}

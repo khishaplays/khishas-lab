@@ -1,0 +1,644 @@
+.about-page {
+  --about-line: rgba(44, 25, 19, 0.16);
+  --about-paper: rgba(247, 234, 217, 0.78);
+  background: var(--cream-light);
+  color: var(--espresso);
+}
+
+.about-intro,
+.about-section,
+.about-cta {
+  padding-right: 8%;
+  padding-left: 8%;
+}
+
+.about-intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  align-items: center;
+  gap: 8%;
+  min-height: 560px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(44, 25, 19, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 25, 19, 0.025) 1px, transparent 1px),
+    var(--cream-light);
+  background-size: 32px 32px;
+}
+
+.about-intro::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--about-line);
+  content: "";
+}
+
+.about-intro-copy {
+  max-width: 760px;
+}
+
+.about-eyebrow {
+  margin: 0;
+  color: var(--caramel);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+}
+
+.about-intro h1 {
+  margin: 22px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.6rem, 8vw, 7.2rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.about-intro h1 em {
+  color: var(--caramel);
+  font-weight: 500;
+}
+
+.about-lede {
+  max-width: 560px;
+  margin: 28px 0;
+  color: var(--muted);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.about-text-link,
+.about-project-link,
+.about-cta-primary,
+.about-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.about-text-link {
+  padding: 0 0 7px;
+  border-bottom: 1px solid var(--caramel);
+  color: var(--espresso);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-note {
+  position: relative;
+  display: flex;
+  min-height: 245px;
+  padding: 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px dashed rgba(112, 71, 55, 0.5);
+  background: var(--about-paper);
+  box-shadow: 0 18px 40px rgba(44, 25, 19, 0.07);
+  transform: rotate(2deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-note:hover {
+  box-shadow: 0 22px 46px rgba(44, 25, 19, 0.12);
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.about-note-number,
+.about-note-caption {
+  color: var(--muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+}
+
+.about-note > svg {
+  color: var(--caramel);
+}
+
+.about-note p {
+  margin: 10px 0;
+  font-family: "Caveat", cursive;
+  font-size: 1.7rem;
+  line-height: 1.18;
+}
+
+.about-note-rule {
+  width: 100%;
+  border-top: 1px solid var(--about-line);
+}
+
+.about-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+  border-bottom: 1px solid var(--about-line);
+}
+
+.about-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 42px;
+}
+
+.about-section-index {
+  padding-top: 5px;
+  color: var(--caramel);
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+}
+
+.about-section-heading .about-eyebrow {
+  margin-bottom: 8px;
+}
+
+.about-section-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.about-section-copy {
+  max-width: 770px;
+  margin-left: clamp(42px, 8vw, 115px);
+}
+
+.about-section-copy h2,
+.about-building-heading h2,
+.about-philosophy-intro h2 {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.about-section-copy p,
+.about-education-card > div > p:last-child,
+.about-philosophy-intro > p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.about-editor-prompt {
+  padding-left: 14px;
+  border-left: 2px solid var(--latte);
+  font-size: 0.86rem !important;
+}
+
+.about-education-card {
+  position: relative;
+  display: flex;
+  max-width: 770px;
+  min-height: 160px;
+  margin-left: clamp(42px, 8vw, 115px);
+  padding: 30px;
+  align-items: flex-start;
+  gap: 24px;
+  border: 1px solid var(--about-line);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      rgba(44, 25, 19, 0.045) 36px
+    ),
+    var(--about-paper);
+}
+
+.about-education-icon,
+.about-principle-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(112, 71, 55, 0.3);
+  border-radius: 50%;
+  color: var(--mocha);
+}
+
+.about-education-card h2 {
+  margin: 8px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.about-education-card > div > p:last-child {
+  margin: 0;
+}
+
+.about-margin-mark {
+  margin-left: auto;
+  color: var(--caramel);
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+}
+
+.about-philosophy {
+  background: rgba(223, 194, 164, 0.17);
+}
+
+.about-philosophy-intro {
+  display: flex;
+  margin: 0 0 42px clamp(42px, 8vw, 115px);
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.about-philosophy-intro h2 {
+  margin: 0;
+}
+
+.about-philosophy-intro > p {
+  max-width: 320px;
+  margin: 0 0 5px;
+}
+
+.about-principles {
+  display: grid;
+  margin-left: clamp(42px, 8vw, 115px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--about-line);
+  border-bottom: 1px solid var(--about-line);
+}
+
+.about-principle {
+  min-height: 245px;
+  padding: 26px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.about-principle + .about-principle {
+  border-left: 1px solid var(--about-line);
+}
+
+.about-principle:hover {
+  background: rgba(247, 234, 217, 0.58);
+  transform: translateY(-3px);
+}
+
+.about-principle-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.about-principle-number {
+  display: block;
+  margin: 24px 0 10px;
+  color: var(--caramel);
+  font-size: 0.61rem;
+  letter-spacing: 0.14em;
+}
+
+.about-principle h3 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.23rem;
+  font-weight: 500;
+}
+
+.about-principle p,
+.about-project-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.about-building-heading {
+  display: flex;
+  margin: 0 0 25px clamp(42px, 8vw, 115px);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.about-building-heading h2 {
+  margin: 0;
+}
+
+.about-building-heading > span {
+  color: var(--muted);
+  font-size: 0.59rem;
+  letter-spacing: 0.15em;
+}
+
+.about-projects {
+  display: grid;
+  margin-left: clamp(42px, 8vw, 115px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-project-card {
+  display: flex;
+  min-width: 0;
+  min-height: 300px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--about-line);
+  border-radius: 4px;
+  background: var(--about-paper);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.about-project-card:hover {
+  border-color: rgba(112, 71, 55, 0.38);
+  box-shadow: 0 16px 34px rgba(44, 25, 19, 0.09);
+  transform: translateY(-5px);
+}
+
+.about-project-topline {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+}
+
+.about-project-status {
+  color: var(--caramel);
+}
+
+.about-project-card h3 {
+  margin: 25px 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.about-project-tags {
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.about-project-tags span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(173, 118, 87, 0.12);
+  font-size: 0.64rem;
+}
+
+.about-project-link {
+  margin-top: auto;
+  padding-top: 9px;
+  color: var(--mocha);
+  font-size: 0.79rem;
+  font-weight: 600;
+}
+
+.about-project-link:hover,
+.about-text-link:hover {
+  color: var(--caramel);
+}
+
+.about-cta {
+  display: flex;
+  min-height: 320px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: var(--espresso);
+  color: var(--cream-light);
+}
+
+.about-cta .about-eyebrow {
+  color: var(--latte);
+}
+
+.about-cta h2 {
+  margin: 16px 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.about-cta-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.about-cta-primary,
+.about-cta-secondary {
+  min-height: 46px;
+  padding: 0 18px;
+  justify-content: center;
+  border: 1px solid rgba(248, 236, 220, 0.5);
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.about-cta-primary {
+  background: var(--cream-light);
+  color: var(--espresso);
+}
+
+.about-cta-secondary {
+  color: var(--cream-light);
+}
+
+.about-cta-primary:hover,
+.about-cta-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.about-cta-primary:hover {
+  background: var(--latte);
+}
+
+.about-cta-secondary:hover {
+  background: rgba(248, 236, 220, 0.1);
+}
+
+.about-page a:focus-visible {
+  outline: 3px solid var(--caramel);
+  outline-offset: 4px;
+}
+
+.about-cta a:focus-visible {
+  outline-color: var(--latte);
+}
+
+@media (max-width: 900px) {
+  .about-intro,
+  .about-section,
+  .about-cta {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .about-intro {
+    grid-template-columns: minmax(0, 1fr) 210px;
+    gap: 5%;
+  }
+
+  .about-principles,
+  .about-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-principle:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--about-line);
+    border-left: 0;
+  }
+
+  .about-project-card {
+    min-height: 280px;
+  }
+
+  .about-lab-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-intro,
+  .about-section,
+  .about-cta {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .about-intro {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .about-intro h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .about-note {
+    width: min(100%, 280px);
+    min-height: 200px;
+    justify-self: end;
+  }
+
+  .about-section {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+
+  .about-section-heading {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .about-section-copy,
+  .about-education-card,
+  .about-philosophy-intro,
+  .about-principles,
+  .about-building-heading,
+  .about-projects {
+    margin-left: 0;
+  }
+
+  .about-education-card {
+    padding: 22px 18px;
+    gap: 14px;
+  }
+
+  .about-education-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-philosophy-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .about-principles,
+  .about-projects {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-principle {
+    min-height: auto;
+    padding: 22px 18px;
+  }
+
+  .about-principle + .about-principle,
+  .about-principle:nth-child(3) {
+    border-top: 1px solid var(--about-line);
+    border-left: 0;
+  }
+
+  .about-principle-number {
+    margin-top: 16px;
+  }
+
+  .about-building-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .about-project-card,
+  .about-lab-card {
+    min-height: 260px;
+    grid-column: auto;
+  }
+
+  .about-cta {
+    min-height: auto;
+    padding-top: 54px;
+    padding-bottom: 58px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-cta-links {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
