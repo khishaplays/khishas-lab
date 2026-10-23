@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
+import Journey from "./pages/Journey";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -49,28 +52,10 @@ function App() {
             <Route path="/journal" element={<Journal />} />
 
             {/* JOURNEY */}
-            <Route
-              path="/journey"
-              element={
-                <Page
-                  number="05 — JOURNEY"
-                  title="The Journey."
-                  subtitle="Learning, experimenting and growing as a software engineer."
-                />
-              }
-            />
+            <Route path="/journey" element={<Journey />} />
 
             {/* CONTACT */}
-            <Route
-              path="/contact"
-              element={
-                <Page
-                  number="06 — CONTACT"
-                  title="Let's Connect."
-                  subtitle="Have an opportunity, collaboration or idea? Let's talk."
-                />
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
 
             {/* UNKNOWN ROUTES */}
             <Route
@@ -86,6 +71,7 @@ function App() {
             />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

@@ -1,0 +1,111 @@
+.site-footer {
+  padding: 48px 7% 22px;
+  border-top: 1px solid rgba(44, 25, 19, 0.16);
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+.site-footer-main {
+  display: grid;
+  max-width: 1320px;
+  margin: 0 auto;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 2fr) auto;
+  align-items: start;
+  gap: 42px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand span {
+  font-size: 0.9rem;
+}
+
+.footer-tagline {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.footer-nav a,
+.footer-professional-link {
+  width: fit-content;
+  color: var(--mocha);
+  font-size: 0.79rem;
+  transition: color 160ms ease;
+}
+
+.footer-nav a:hover,
+.footer-professional-link:hover {
+  color: var(--caramel);
+}
+
+.footer-professional-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-footer-bottom {
+  display: flex;
+  max-width: 1320px;
+  margin: 36px auto 0;
+  padding-top: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(44, 25, 19, 0.13);
+  color: var(--muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+}
+
+.site-footer :focus-visible {
+  outline: 3px solid var(--mocha);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .site-footer {
+    padding: 38px 6% 20px;
+  }
+
+  .site-footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .footer-brand-block {
+    grid-column: 1 / -1;
+  }
+
+  .footer-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer-bottom {
+    margin-top: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer a {
+    transition: none;
+  }
+}

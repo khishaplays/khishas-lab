@@ -41,10 +41,10 @@ function Home() {
               <span>GitHub</span>
             </a>
 
-            <a href="/contact" aria-label="Contact">
+            <Link to="/contact" aria-label="Contact">
               <X size={18} aria-hidden="true" />
               <span>Contact</span>
-            </a>
+            </Link>
           </div>
 
           <div className="availability">
