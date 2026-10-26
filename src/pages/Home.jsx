@@ -48,8 +48,11 @@ function Home() {
     <div className="home-page" ref={homeRef}>
       <section className="hero" id="home" aria-labelledby="home-title">
         <div className="hero-copy home-reveal">
-          <p className="hero-name">Lisa LaKisha</p>
-          <p className="hero-role">Software Engineer</p>
+          <p className="hero-kicker">Driven to solve. Inspired to build.</p>
+          <p className="hero-name">Lisa Lakisha</p>
+          <p className="hero-role">
+            Software Engineer | Full-Stack Development
+          </p>
           <h1 id="home-title">Engineering ideas into experiences.</h1>
           <p className="hero-description">
             I build with curiosity,{" "}
