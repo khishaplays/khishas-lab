@@ -38,6 +38,12 @@ function Projects() {
     filter === "All"
       ? projects
       : projects.filter((project) => project.type === filter);
+  const featuredProjects = visibleProjects.filter(
+    (project) => project.group === "featured",
+  );
+  const playgroundProjects = visibleProjects.filter(
+    (project) => project.group === "playground",
+  );
 
   const featuredRepositoryKeys = new Set(
     projects.flatMap((project) =>
@@ -195,85 +201,221 @@ function Projects() {
         </p>
       </div>
 
-      <section className="workbench-featured" aria-labelledby="featured-title">
-        <div className="workbench-section-heading">
-          <div>
-            <p className="workbench-label">HAND-PICKED / IN PROGRESS</p>
-            <h2 id="featured-title">Featured Projects</h2>
-          </div>
-        </div>
-
-        {/* PROJECT FILTERS */}
-        <div className="workbench-controls">
-          <div
-            className="workbench-filters"
-            role="group"
-            aria-label="Filter featured projects"
-          >
-            {filters.map((item) => (
-              <button
-                key={item}
-                type="button"
-                className={filter === item ? "selected" : ""}
-                aria-pressed={filter === item}
-                onClick={() => setFilter(item)}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <span className="workbench-count">
-            {String(visibleProjects.length).padStart(2, "0")} PROJECT FILES
-          </span>
-        </div>
-
-        <div className="workbench-grid">
-          {visibleProjects.map((project) => (
-            <article className="workbench-card" key={project.id}>
-              <div className="workbench-card-art">
-                <span>FILE NO. {project.number}</span>
-
-                <div className="workbench-art-title">
-                  <small>KHISHA'S LAB ORIGINAL</small>
-                  <h2>{project.name}</h2>
-                </div>
-
-                <ArrowUpRight size={26} aria-hidden="true" />
-              </div>
-
-              <div className="workbench-card-content">
-                <div className="workbench-card-meta">
-                  <span>{project.type}</span>
-                  <span>{project.status}</span>
-                </div>
-
-                <h3>{project.name}</h3>
-
-                <p>{project.description}</p>
-
-                <div className="workbench-tags">
-                  {project.stack.map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
-                </div>
-
-                <button
-                  className="workbench-open"
-                  type="button"
-                  onClick={(event) => {
-                    openerRef.current = event.currentTarget;
-                    setSelected(project);
-                  }}
-                >
-                  Open project file
-                  <ArrowRight size={18} aria-hidden="true" />
-                </button>
-              </div>
-            </article>
+      <div className="workbench-controls">
+        <div
+          className="workbench-filters"
+          role="group"
+          aria-label="Filter projects by type"
+        >
+          {filters.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={filter === item ? "selected" : ""}
+              aria-pressed={filter === item}
+              onClick={() => setFilter(item)}
+            >
+              {item}
+            </button>
           ))}
         </div>
-      </section>
+
+        <span className="workbench-count" aria-live="polite">
+          {String(visibleProjects.length).padStart(2, "0")} PROJECT FILES
+        </span>
+      </div>
+
+      {featuredProjects.length > 0 && (
+        <section
+          className="workbench-featured"
+          aria-labelledby="featured-title"
+        >
+          <div className="workbench-section-heading">
+            <div>
+              <p className="workbench-label">HAND-PICKED / IN PROGRESS</p>
+              <h2 id="featured-title">Featured Builds</h2>
+              <p className="workbench-section-subtitle">
+                Projects where curiosity meets engineering.
+              </p>
+            </div>
+          </div>
+
+          <div className="workbench-grid">
+            {featuredProjects.map((project) => (
+              <article className="workbench-card" key={project.id}>
+                {project.id === "wanderly" ? (
+                  <div
+                    className="workbench-card-art workbench-featured-art wanderly-preview"
+                    role="img"
+                    aria-label="Illustrative Wanderly travel-discovery preview showing 47 Kenyan counties and destination regions"
+                  >
+                    <div className="featured-preview-topline">
+                      <span>PRODUCT PREVIEW · ILLUSTRATIVE</span>
+                      <span className="wanderly-preview-mark">W</span>
+                    </div>
+                    <div className="wanderly-preview-heading">
+                      <div>
+                        <small>TRAVEL, YOUR WAY</small>
+                        <h2>Wanderly</h2>
+                      </div>
+                      <span className="wanderly-county-count">
+                        <strong>47</strong>
+                        Counties
+                      </span>
+                    </div>
+                    <div className="wanderly-discovery">
+                      <span>EXPLORE KENYA</span>
+                      <div className="wanderly-destinations">
+                        <span>Nairobi</span>
+                        <span>Coast</span>
+                        <span>Highlands</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="workbench-card-art workbench-featured-art scribe-preview"
+                    role="img"
+                    aria-label="Illustrative Scribe terminal preview showing today's active coding activity for the Scribe project"
+                  >
+                    <div className="featured-preview-topline">
+                      <span>ILLUSTRATIVE CLI PREVIEW</span>
+                      <span className="scribe-terminal-dots" aria-hidden="true">
+                        <i />
+                        <i />
+                        <i />
+                      </span>
+                    </div>
+                    <div className="scribe-preview-heading">
+                      <small>DEVELOPER ACTIVITY TRACKER</small>
+                      <h2>Scribe</h2>
+                    </div>
+                    <div className="scribe-terminal" aria-hidden="true">
+                      <p>
+                        <span>$</span> scribe today
+                      </p>
+                      <strong>TODAY&apos;S ACTIVITY</strong>
+                      <div>
+                        <span>Project:</span> Scribe
+                      </div>
+                      <div>
+                        <span>Type:</span> coding
+                      </div>
+                      <div>
+                        <span>Status:</span> <b>active</b>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="workbench-card-content">
+                  <div className="workbench-card-meta">
+                    <span>{project.type}</span>
+                    <span>{project.status}</span>
+                  </div>
+
+                  <h3>{project.name}</h3>
+
+                  <p>{project.description}</p>
+
+                  <div
+                    className="workbench-highlights"
+                    aria-label={`${project.name} engineering highlights`}
+                  >
+                    {project.highlights.map((highlight) => (
+                      <span key={highlight}>{highlight}</span>
+                    ))}
+                  </div>
+
+                  <div className="workbench-tags">
+                    {project.stack.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+
+                  <button
+                    className="workbench-open"
+                    type="button"
+                    onClick={(event) => {
+                      openerRef.current = event.currentTarget;
+                      setSelected(project);
+                    }}
+                  >
+                    Open project file
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {playgroundProjects.length > 0 && (
+        <section
+          className="workbench-playground"
+          aria-labelledby="playground-title"
+        >
+          <div className="workbench-section-heading">
+            <div>
+              <p className="workbench-label">LEARNING / PRACTICE</p>
+              <h2 id="playground-title">The Playground</h2>
+              <p className="workbench-section-subtitle">
+                Small experiments. Big lessons.
+              </p>
+            </div>
+          </div>
+
+          <div className="workbench-grid workbench-playground-grid">
+            {playgroundProjects.map((project) => (
+              <article
+                className="workbench-card workbench-playground-card"
+                key={project.id}
+              >
+                <div className="workbench-card-art">
+                  <span>FILE NO. {project.number}</span>
+
+                  <div className="workbench-art-title">
+                    <small>LEARNING PROJECT</small>
+                    <h2>{project.name}</h2>
+                  </div>
+
+                  <ArrowUpRight size={26} aria-hidden="true" />
+                </div>
+
+                <div className="workbench-card-content">
+                  <div className="workbench-card-meta">
+                    <span>{project.type}</span>
+                    <span>{project.status}</span>
+                  </div>
+
+                  <h3>{project.name}</h3>
+
+                  <p>{project.description}</p>
+
+                  <div className="workbench-tags">
+                    {project.stack.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+
+                  <button
+                    className="workbench-open"
+                    type="button"
+                    onClick={(event) => {
+                      openerRef.current = event.currentTarget;
+                      setSelected(project);
+                    }}
+                  >
+                    Open project file
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="workbench-archive" aria-labelledby="archive-title">
         <div className="workbench-section-heading">
@@ -398,30 +540,78 @@ function Projects() {
 
             <h2 id="workbench-dialog-title">{selected.name}</h2>
 
+            <h3>Project Overview</h3>
             <p>{selected.description}</p>
 
-            <h3>The Challenge</h3>
+            <h3>Engineering Challenge</h3>
             <p>{selected.challenge}</p>
 
-            <h3>Built With</h3>
+            {selected.technicalHighlights?.length > 0 && (
+              <>
+                <h3>Technical Highlights</h3>
+                <ul className="workbench-dialog-highlights">
+                  {selected.technicalHighlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </>
+            )}
 
+            {selected.inProgress && (
+              <p className="workbench-dialog-note">
+                <strong>In progress:</strong> {selected.inProgress}
+              </p>
+            )}
+
+            <h3>Technology Stack</h3>
             <div className="workbench-tags">
               {selected.stack.map((tech) => (
                 <span key={tech}>{tech}</span>
               ))}
             </div>
 
-            {selected.github && (
-              <a
-                className="workbench-github"
-                href={selected.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Code2 size={18} aria-hidden="true" />
-                View Source Code
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
+            {(selected.github ||
+              selected.liveUrl ||
+              selected.demoVideoUrl) && (
+              <>
+                <h3>Project Links</h3>
+                <div className="workbench-dialog-links">
+                  {selected.github && (
+                    <a
+                      className="workbench-github"
+                      href={selected.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Code2 size={18} aria-hidden="true" />
+                      View Source Code
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  )}
+                  {selected.liveUrl && (
+                    <a
+                      className="workbench-github workbench-live"
+                      href={selected.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  )}
+                  {selected.demoVideoUrl && (
+                    <a
+                      className="workbench-github workbench-live"
+                      href={selected.demoVideoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Video Walkthrough
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  )}
+                </div>
+              </>
             )}
           </div>
         </div>

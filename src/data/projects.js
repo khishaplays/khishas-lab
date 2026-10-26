@@ -3,32 +3,71 @@ export const projects = [
   {
     id: "wanderly",
     number: "001",
+    group: "featured",
     name: "Wanderly",
+    highlights: [
+      "Full-stack React + FastAPI",
+      "47-county discovery",
+      "PostgreSQL-backed destinations",
+    ],
     type: "Full Stack",
     description:
-      "A Kenya-focused travel discovery platform connecting visitors with destinations and experiences.",
-    stack: ["React", "Flask", "Python", "SQLAlchemy"],
+      "A full-stack travel discovery platform designed to make exploring Kenya more intuitive, bringing together destinations, county-based discovery, and an evolving trip-planning experience.",
+    stack: [
+      "React",
+      "JavaScript",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+    ],
     challenge:
-      "Making destination discovery intuitive while connecting a React frontend to a structured backend API.",
+      "Designing a structured destination discovery system while integrating a responsive React frontend, FastAPI REST endpoints, PostgreSQL data models, and cloud deployment.",
+    technicalHighlights: [
+      "Implemented discovery across Kenya's 47 counties.",
+      "Built destination and county API endpoints.",
+      "Connected a React frontend to a FastAPI backend.",
+      "Used PostgreSQL, SQLAlchemy, and Alembic for relational data and migrations.",
+      "Deployed the frontend to Vercel and backend to Render.",
+    ],
+    inProgress:
+      "The trip-planning experience is still being tested locally; saved trips and personalized itineraries are not presented as completed features.",
     github: "https://github.com/khishaplays/wanderly",
+    liveUrl: "https://wanderly-omega-ecru.vercel.app",
     status: "Evolving",
   },
   {
     id: "scribe",
     number: "002",
-    name: "Scribe CLI",
+    group: "featured",
+    name: "Scribe",
+    highlights: [
+      "Python CLI",
+      "Session timing + activity logs",
+      "Daily activity summaries",
+    ],
     type: "Python",
     description:
-      "A developer activity tracker that helps organize projects and record coding sessions from the terminal.",
+      "A Python command-line developer activity tracker that helps organize projects, record coding sessions, and make development work easier to reflect on.",
     stack: ["Python", "Typer", "Rich"],
     challenge:
-      "Creating a useful command-line workflow for tracking development activity.",
+      "Designing an intuitive terminal workflow for recording development activity while distinguishing personal projects from collaborative work.",
+    technicalHighlights: [
+      "Organizes projects through CLI commands.",
+      "Tracks coding-session time.",
+      "Records development activity logs.",
+      "Generates daily activity summaries.",
+    ],
+    inProgress:
+      "Distinguishing individual work from collaborative contributions is an evolving design goal; team-tracking features are not represented as complete.",
     github: "https://github.com/khishaplays/Scribe",
     status: "Building",
   },
   {
     id: "mocha-desk",
     number: "003",
+    group: "playground",
     name: "Mocha Desk",
     type: "JavaScript",
     description:
@@ -42,6 +81,7 @@ export const projects = [
   {
     id: "task-manager",
     number: "004",
+    group: "playground",
     name: "Task Management System",
     type: "Python",
     description:
